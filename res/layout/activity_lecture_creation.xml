@@ -1,0 +1,165 @@
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin" >
+
+        <TableRow
+            android:id="@+id/tableRow1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center" >
+
+            <TextView
+                android:id="@+id/txtV_enterLectureName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/txtV_enterLectureName" />
+
+            <EditText
+                android:id="@+id/editText_lectureName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/txtV_enterLectureNameHint"
+                android:ems="10" >
+                <requestFocus />
+            </EditText>
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" 
+            android:gravity="center" >
+            
+            <TextView
+                android:id="@+id/txtV_enterLecturerName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/txtV_enterLecturerName" />
+
+            <EditText
+                android:id="@+id/editText_lecturerName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/txtV_enterLecturerNameHint"
+                android:ems="10" />
+
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" 
+            android:gravity="center" >
+			
+            <TextView
+                android:id="@+id/txtV_enterWeekDay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/txtV_enterWeekDay" />
+
+            <EditText
+                android:id="@+id/editText_weekDay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="number" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow4"
+            style="@color/blue"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center" >
+            
+            <TextView
+                android:id="@+id/txtV_enterTimeFrom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/txtV_enterTimeFrom" />
+
+            <TimePicker
+                android:id="@+id/timePicker_from"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            
+        </TableRow>
+        
+        <TableRow
+            android:id="@+id/tableRow5"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center" >
+            
+            <TextView
+                android:id="@+id/txtV_enterTimeTo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/txtV_enterTimeTo" />
+
+            <TimePicker
+                android:id="@+id/timePicker_to"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            
+        </TableRow>
+        
+        <TableRow
+            android:id="@+id/tableRow6"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center" >
+            
+            <TextView
+                android:id="@+id/txtV_enterLocation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/txtV_enterLocation" />
+
+            <EditText
+                android:id="@+id/editText_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10" 
+                android:hint="@string/txtV_enterLocationHint"/>
+            
+        </TableRow>
+        
+        <TableRow
+            android:id="@+id/tableRow7"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center" >
+            
+            <TextView
+                android:id="@+id/txtV_enterNote"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/txtV_enterNote" />
+
+            <EditText
+                android:id="@+id/editText_note"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textMultiLine"
+                android:hint="@string/txtV_enterNoteHint" />
+            
+        </TableRow>
+
+        <Button
+            android:id="@+id/btn_saveLecture"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_saveLecture" 
+            android:onClick="saveNewLecture"/>
+
+</TableLayout>

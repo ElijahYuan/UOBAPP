@@ -17,10 +17,10 @@
 		>
 			<TextView android:id="@+id/taskText" android:gravity="center"
 			android:layout_width="fill_parent" android:layout_height="fill_parent"
-			android:textSize="20sp" android:text="课程表" android:textColor="@color/red"
+			android:textSize="20sp" android:text="@string/txtV_timetable" android:textColor="@color/red"
 			/>
 		</LinearLayout>
-	
+
 		<LinearLayout android:id="@+id/accounts"
 			android:orientation="horizontal"
 			android:layout_height="35dip"
@@ -28,10 +28,10 @@
 		>
 			<TextView android:id="@+id/accountsText" android:gravity="center"
 			android:layout_width="fill_parent" android:layout_height="fill_parent"
-			android:textSize="20sp" android:text="通讯录" android:textColor="@color/green"
+			android:textSize="20sp" android:text="@string/txtV_contacts" android:textColor="@color/green"
 			/>
 		</LinearLayout>
-		
+
 			<LinearLayout android:id="@+id/sended"
 			android:orientation="horizontal"
 			android:layout_height="35dip"
@@ -39,14 +39,18 @@
 		>
 			<TextView android:id="@+id/sendedText" android:gravity="center"
 			android:layout_width="fill_parent" android:layout_height="fill_parent"
-			android:textSize="20sp" android:text="测试用" android:textColor="@color/green"
+			android:textSize="20sp" android:text="@string/txtV_test" android:textColor="@color/green"
 			/>
 		</LinearLayout>
 	</LinearLayout>
-	<Button android:id="@+id/btnBottom" android:layout_alignParentBottom="true"
-		android:layout_height="wrap_content" android:layout_width="fill_parent"
-		android:text="底部按钮"/>
-		
+	<Button android:id="@+id/btnBottom"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:layout_alignParentBottom="true"
+		android:text="@string/btn_newTimetable"
+		android:onClick="newTimetable"/>
+
+
 	<LinearLayout android:id="@+id/content" 
 		android:orientation="vertical" 
 		android:layout_width="fill_parent"
@@ -59,5 +63,5 @@
 			这里配合使用,就是放在顶部tab和底部Button的中间
 		-->
 	</LinearLayout>
-	
+
 </RelativeLayout>
