@@ -1,6 +1,11 @@
 package com.example.uobapp.db;
 
+import java.util.ArrayList;
+
+import com.example.uobapp.entity.Lecture;
+
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteDatabase.CursorFactory;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -34,6 +39,26 @@ public class DBHelper extends SQLiteOpenHelper {
 		// TODO Auto-generated method stub
 		db.execSQL("DROP TABLE IF EXISTS TimeTable;");
 		this.onCreate(db);
+	}
+	
+	public ArrayList<Lecture> getLectures() {
+		ArrayList<Lecture> lectures = new ArrayList<Lecture>();
+		SQLiteDatabase db = this.getReadableDatabase();
+		
+		Cursor cursor = db.query("TimeTable", new String[]{"*"}, null, null, null, null, null);
+		
+		while(cursor.moveToNext()) {
+			Lecture l = new Lecture(cursor.getInt(0), 
+									cursor.getString(1), 
+									cursor.getString(2), 
+									cursor.getInt(3), 
+									cursor.getString(4), 
+									cursor.getString(5), 
+									cursor.getString(6), 
+									cursor.getString(7));
+			lectures.add(l);
+		}
+		return lectures;
 	}
 	
 
