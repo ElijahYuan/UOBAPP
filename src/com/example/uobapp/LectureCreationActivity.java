@@ -38,10 +38,8 @@ public class LectureCreationActivity extends Activity {
 		String lectureName = ((EditText) findViewById(R.id.editText_lectureName)).getText().toString();
 		String lecturerName = ((EditText) findViewById(R.id.editText_lecturerName)).getText().toString();
 		int weekDay = Integer.parseInt(((EditText) findViewById(R.id.editText_weekDay)).getText().toString());
-		String timeFrom = ((TimePicker) findViewById(R.id.timePicker_from)).getCurrentHour()+":"+
-						((TimePicker) findViewById(R.id.timePicker_from)).getCurrentMinute();
-		String timeTo = ((TimePicker) findViewById(R.id.timePicker_to)).getCurrentHour()+":"+
-						((TimePicker) findViewById(R.id.timePicker_to)).getCurrentMinute();
+		String timeFrom = ((TimePicker) findViewById(R.id.timePicker_from)).getCurrentHour()+":00";
+		String timeTo = ((TimePicker) findViewById(R.id.timePicker_to)).getCurrentHour()+":00";
 		String location = ((EditText) findViewById(R.id.editText_location)).getText().toString();
 		String note = ((EditText) findViewById(R.id.editText_note)).getText().toString();
 		note = note.equals("")?"null":note;
