@@ -8,6 +8,7 @@
     <string name="accountsContent_str">Chat interface</string>
     <string name="sendedContent_str">Others</string>
     <string name="btn_newTimetable">New Timetable</string>
+    <string name="btn_importTimetable">Import Timetable</string>
     <string name="txtV_timetable">Timetable</string>
     <string name="txtV_contacts">Contacts</string>
     <string name="txtV_test">Test</string>
@@ -26,6 +27,10 @@
     <string name="txtV_enterNoteHint">Notes</string>
     <string name="btn_saveLecture">Save</string>
     <!-- Lecture creation end -->
+
+    <string name="title_activity_task">Task</string>
     
+    <string name="prompt_sid">Student ID</string>
+    <string name="prompt_password">Password</string>
 
 </resources>

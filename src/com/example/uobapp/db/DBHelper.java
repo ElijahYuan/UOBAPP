@@ -1,6 +1,8 @@
 package com.example.uobapp.db;
 
 import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
 import com.example.uobapp.entity.Lecture;
 
@@ -9,6 +11,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteDatabase.CursorFactory;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 public class DBHelper extends SQLiteOpenHelper {
 
@@ -61,5 +64,41 @@ public class DBHelper extends SQLiteOpenHelper {
 		return lectures;
 	}
 	
+	public Lecture searchLecture(int timeFrom,int timeTo, int weekDay) {
+		Lecture lecture = null;
+		SQLiteDatabase db = this.getReadableDatabase();
+		
+		Cursor cursor = db.rawQuery("select * from TimeTable where (timeFrom='"+timeFrom+":00' or timeTo='"+timeTo+":00') and weekDay='"+weekDay+"';", null);
+		if(cursor.moveToNext()){
+		lecture = new Lecture(cursor.getInt(0), 
+				cursor.getString(1), 
+				cursor.getString(2), 
+				cursor.getInt(3), 
+				cursor.getString(4), 
+				cursor.getString(5), 
+				cursor.getString(6), 
+				cursor.getString(7));
+		}
+		return lecture;	
+	}
+	
+	public void importTimetable(List timetable) {
+		SQLiteDatabase db = this.getWritableDatabase();
+		this.onUpgrade(db, 1, 1);
+		Iterator iterator = timetable.iterator();
+		while(iterator.hasNext()) {
+			Object[] t = (Object[])iterator.next();
+			//Log.d(t[3].toString()+" to "+t[4].toString(), "Debug");
+			db.execSQL("INSERT INTO TimeTable(lecture,lecturer,weekDay,timeFrom,timeTo,location,note) values('"
+					+t[0]+"','"
+					+t[1]+"','"
+					+t[2]+"','"
+					+t[3]+"','"
+					+t[4]+"','"
+					+t[5]+"','"
+					+""
+					+"')");			
+		}
+	}
 
 }

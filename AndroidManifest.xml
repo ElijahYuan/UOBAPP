@@ -4,6 +4,8 @@
     android:versionCode="1"
     android:versionName="1.0" >
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    
     <uses-sdk
         android:minSdkVersion="14"
         android:targetSdkVersion="17" />
@@ -25,6 +27,14 @@
         <activity
             android:name="com.example.uobapp.LectureCreationActivity"
             android:label="@string/title_activity_lecture_creation"
+            android:parentActivityName="com.example.uobapp.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.uobapp.MainActivity" />
+        </activity>
+        <activity
+            android:name="com.example.uobapp.Task"
+            android:label="@string/title_activity_task"
             android:parentActivityName="com.example.uobapp.MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
